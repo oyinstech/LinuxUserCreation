@@ -1,6 +1,6 @@
 #!/bin/bash
 
-newusers="subscribers.csv"
+newusers="subscriber.csv"
 
 # Read the file line by line
 while read -r line; do
