@@ -22,6 +22,9 @@ while read -r line; do
             # Create account for the users
             sudo useradd "$username"
             echo "$username:$password" | sudo chpasswd
+
+            echo -e "Subject: Welcome to the PlatformCloud Engineer\n\nYou are welcome to the platform!" | ssmtp oyinloyedavidkay@gmail.com
+
             echo "User $username created."
         fi
     fi
