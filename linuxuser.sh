@@ -4,7 +4,7 @@ newusers="subscribers.csv"
 
 # Read the file line by line
 while read -r line; do
-    heading=$(echo "$line" | grep "Firstname, Lastname, Username, Password")
+    heading=$(echo "$line" | grep "Firstname, Lastname, Username, Password, Email")
     if [[ $heading ]]; 
     then
         echo "Found header line: $line"
@@ -23,7 +23,7 @@ while read -r line; do
             sudo useradd "$username"
             echo "$username:$password" | sudo chpasswd
 
-            echo -e "Subject: Welcome to the PlatformCloud Engineer\n\nYou are welcome to the platform!" | ssmtp oyinloyedavidkay@gmail.com
+            echo -e "Subject: Welcome to the PlatformCloud Engineer\n\nYou are welcome to the platform!" | ssmtp oyinloyedavid@gmail.com
 
             echo "User $username created."
         fi
